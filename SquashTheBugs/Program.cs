@@ -49,8 +49,7 @@ namespace SquashTheBugs
             }
 
             // output all numbers which have been processed
-            // Console.WriteLine("These numbers have been processed: " allNumbers);     compile-time error
-            Console.WriteLine("These numbers have been processed: " + allNumbers);
+            Console.WriteLine("These numbers have been processed: " allNumbers);
         }
     }
 }
