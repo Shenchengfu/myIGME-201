@@ -2,8 +2,14 @@
 
 namespace PE4Q2
 {
+    // Author: Shencheng Fu
+    // Purpose: Question 2 for PE 4.
+    // Restrictions: None
     class Program
     {
+        // Method: Main
+        // Purpose: recieve 2 numbers from user and display them
+        // Restrictions: None.
         static void Main(string[] args)
         {
             int var1 = 0;
