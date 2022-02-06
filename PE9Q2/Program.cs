@@ -1,11 +1,19 @@
 ﻿using System;
+using System.Timers;
 
 namespace PE9Q2
 {
+    // Author: Shencheng Fu
+    // Purpose: Question 2 for PE 9.
+    // Restrictions: None
     class Program
     {
+        // Method: Main
+        // Purpose: add a 5 seconds limit to answer time
+        // Restrictions: None.
         static void Main()
         {
+
             // store user name
             string myName = "";
 
@@ -159,11 +167,17 @@ namespace PE9Q2
                     sQuestions = $"Question #{nCntr + 1}: {val1} * {val2} => ";
                 }
 
+                //start the timer for 5 seconds
+                DateTime startTime, endTime;
+                startTime = DateTime.Now;
+
                 // display the question and prompt for the answer
                 do
                 {
                     Console.Write(sQuestions);
                     sResponse = Console.ReadLine();
+
+
 
                     try
                     {
@@ -178,9 +192,19 @@ namespace PE9Q2
 
                 } while (!bValid);
 
+                //count the time elapsed in millisecond
+                endTime = DateTime.Now;
+                Double elapsedMillisecs = ((TimeSpan)(endTime - startTime)).TotalMilliseconds;
+
                 // if response == answer, output flashy reward and increment # correct
                 // else output stark answer
-                if (nResponse == nAnswer)
+                if (elapsedMillisecs > 5000)
+                {
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("You used more than 5 seconds!");
+                }
+                else if (nResponse == nAnswer)
                 {
                     Console.BackgroundColor = ConsoleColor.Blue;
                     Console.ForegroundColor = ConsoleColor.Magenta;
@@ -193,6 +217,7 @@ namespace PE9Q2
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("I'm sorry {0}. The answer is {1}", myName, nAnswer);
+
                 }
 
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -223,6 +248,11 @@ namespace PE9Q2
                     break;
                 }
             } while (true);
+        }
+
+        static bool cpuntDown()
+        {
+            return false;
         }
     }
 }
