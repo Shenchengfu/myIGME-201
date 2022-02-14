@@ -1,30 +1,33 @@
 ﻿using System;
 
-public class HelloWorld
+namespace UT1Q12
 {
-    static string sName = "David";
-    static double dSalary = 30000;
-
-    public static void Main(string[] args)
+    public class Program
     {
+        static string sName = "Shencheng";
+        static double dSalary = 30000;
 
-        string inputName = "";
-
-        Console.WriteLine("Please input the user's name: ");
-        inputName = Console.ReadLine();
-
-        if (GiveRaise(inputName, ref dSalary))
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Congratuations " + sName + "!");
-        }
-    }
 
-    public static bool GiveRaise(string name, ref double salary)
-    {
-        if (name == sName)
-        {
-            dSalary += 19999.99;
+            string inputName = "";
+
+            Console.WriteLine("Please input the user's name: ");
+            inputName = Console.ReadLine();
+
+            if (GiveRaise(inputName, ref dSalary))
+            {
+                Console.WriteLine("Congratuations " + sName + "!");
+            }
         }
-        return name == sName;
+
+        public static bool GiveRaise(string name, ref double salary)
+        {
+            if (name == sName)
+            {
+                dSalary += 19999.99;
+            }
+            return name == sName;
+        }
     }
 }

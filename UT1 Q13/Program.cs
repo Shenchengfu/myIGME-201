@@ -1,43 +1,42 @@
 ﻿using System;
 
-
-public struct employee
+namespace UT1Q13
 {
-    public string sName;
-    public double dSalary;
-
-    public employee(string name, double salary)
+    class Program
     {
-        sName = name;
-        dSalary = salary;
-    }
-
-}
-
-public class HelloWorld
-{
-    employee david = new employee("David", 30000);
-
-    public static void Main(string[] args)
-    {
-
-        string inputName = "";
-
-        Console.WriteLine("Please input the user's name: ");
-        inputName = Console.ReadLine();
-
-        if (GiveRaise(david))
+        public struct employee
         {
-            Console.WriteLine("Congratuations " + sName + "!");
+            public string sName;
+            public double dSalary;
         }
-    }
 
-    public static bool GiveRaise(employee e)
-    {
-        if (e.sName == sName)
+        static string sName = "ShenCheng";
+        static double dSalary = 30000;
+
+        public static void Main(string[] args)
         {
-            e.dSalary += 19999.99;
+            employee ShenCheng;
+            ShenCheng.sName = "ShenCheng";
+            ShenCheng.dSalary = 30000;
+
+            string inputName = "";
+
+            Console.WriteLine("Please input the user's name: ");
+            inputName = Console.ReadLine();
+
+            if (GiveRaise(ShenCheng))
+            {
+                Console.WriteLine("Congratuations " + sName + "!");
+            }
         }
-        return e.sName == sName;
+
+        public static bool GiveRaise(employee e)
+        {
+            if (e.sName == sName)
+            {
+                dSalary += 19999.99;
+            }
+            return e.sName == sName;
+        }
     }
 }
