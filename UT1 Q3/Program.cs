@@ -2,12 +2,12 @@
 
 namespace UT1Q3
 {
-    delegate double round(double x, int y);
+    public delegate double round(double x, int y);
     class Demo
     {
         public static double round(double value, int digit)
         {
-            return Math.round(value, digit);
+            return Math.Round(value, digit);
         }
     }
 
